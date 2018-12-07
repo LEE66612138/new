@@ -1,0 +1,120 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习</title>
+</head>
+<body>
+
+    <script>
+        // console.log(Math.floor(Math.random()*91) + 10);
+        // var a = Math.floor(Math.random()*91) + 10;
+        // var b = Math.floor(Math.random()*91) + 10;
+        // function getMax(x,y){
+        //     console.log( x > y ? x : y);
+        // }
+        // getMax(a,b);
+
+        // var a = 3.6;
+        // console.log(typeof(a));
+        // if(typeof(a) == 'float'){
+        //         console.log(a);
+        //     }
+       
+
+// 如果某年的年份值是4的倍数并且不是100的倍数，
+// 或者该年份值是400的倍数，那么这一年就是闰年。
+// 请编制一个页面，该页面显示当天是否处于闰年。
+        // function getLeapYear(x){
+        //     var a = x%4;
+        //     var b = x%100;
+        //     var c= x%400;
+        //     if(a == 0){
+        //         if(b != 0){
+        //             document.write(x + '年是闰年');
+        //         }else{
+        //             document.write(x + '年不是闰年');
+        //         }
+        //     }else if(c == 0){
+        //         document.write(x + '年是闰年');
+        //     }else{
+        //         document.write(x + '年不是闰年');
+        //     }
+        // }
+        // var now = new Date();
+        // getLeapYear(now.getFullYear());
+
+        // var arr = ['a', 'b', 'c', 'd'];
+        // for(var p in arr){
+        //     console.log(`${p} : ${arr[p]}`)
+
+        // }
+
+        // for(var i=0,j=10; i=j=10; i++, j--){
+        //     console.log(123);
+        // }
+
+            // 计算10！
+            // function fac(num){
+            //     var x = 1;
+            //     for (var i = 1; i <= num; i++) {
+            //         x = x * i;
+            //     }
+            //     return x;
+            // }
+            // var result = fac(10);
+            // console.log(result);
+
+            // function fac(num){
+            //     if(num == 1){
+            //         return 1;
+            //     }else{
+            //         return num * fac(num-1);
+            //     }
+            // }
+            // function add(num){
+            //     var result = 0;
+            //     for(var i = 1; i <= num; i++){
+            //         var result = result + fac(i);
+            //     }
+            //     return result;
+            // }
+            // var result = add(10);
+            // console.log(result);
+
+            // function print(num){
+            //     for(var i = 1; i <= num; i++){
+            //         for(var k = i; k < num; k++){
+            //             document.write('&nbsp;')
+            //         }
+            //         for(var j = 1; j <= i; j++){
+            //             document.write('*&nbsp;')
+            //         }
+            //         document.write('<br>');
+            //     }
+            // }
+            // print(30);
+
+
+            // function num() {
+            //     for (var i = 100; i < 1000; i++) {
+            //     if (i % 4 == 2 && i % 7 == 3 && i % 9 == 5) {
+            //         document.write('x=' + i);
+            //         }
+            //     }
+            // }
+            // num();
+
+            function num() {
+                for (var i = 1000; i < 10000; i++) {
+                if (i % 13 == 0 && Math.floor(i/1000) == Math.floor(i%1000/100) + Math.floor(i%100/10)) {
+                    document.write('x=' + i);
+                    }
+                }
+            }
+            num();
+            
+    </script>
+</body>
+</html>

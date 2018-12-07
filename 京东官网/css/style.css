@@ -1,0 +1,249 @@
+/* css reset */
+*{
+    margin: 0;
+    padding: 0;
+}
+ul, ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    border: 0;
+}
+.wrapper{
+    width: 1190px;
+    margin: 0 auto;
+}
+body{
+    background: #f0f3ef;
+}
+
+
+/* 公共样式 */
+/* banner开始 */
+
+#banner{
+    height: 80px;
+    background: #93c9e6 url('../img/banner.jpg') no-repeat 50% 50%;
+    position: relative;
+    z-index: 30;
+}
+#banner a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+/* banner结束 */
+/* nav开始 */
+#nav{
+    height: 30px;
+    background: #e3e4e5;
+    border-bottom: 1px solid #ddd;
+    color: #999;
+    font-size: 12px;
+    position: relative;
+}
+/* #logo{
+    width: 190px;
+    height: 170px;
+    background: url("../img/sprite.head.png") no-repeat;
+    float: left;
+} */
+#situation{
+    /* overflow: hidden; */
+    float: left;
+    margin-left: 200px; 
+    position: relative;
+    /* margin-left: 190px； */
+}
+
+#situation-choice{
+    width: 322px;
+    height: 359px;
+    padding: 10px;
+    background: #fff;
+    border: 0px 1px 1px solid #ccc;
+    box-shadow: 1px 2px 1px rgba(0,0,0,.1);
+    position: absolute;
+    top: 30px;
+    left: 0;
+    z-index: 1;
+    display: none;
+}
+#situation li{
+    float: left;
+    /* padding: 0 7px; */
+    line-height: 30px;
+
+}
+#situation #icon-situation, #xiala{
+    border: 1px solid #e3e4e5;
+    display: block;
+    /* width: 58px; */
+    height: 30px;
+}
+#situation #icon-situation:hover{
+    background: #fff;
+    
+}
+#situation #icon-situation:hover + #situation-choice{
+    display: block;
+} 
+#situation #icon-situation li{
+    padding: 0;
+}
+#main-menu{
+    overflow: hidden;
+    float: right;
+    
+    
+}
+#main-menu li{
+    float: left;
+    padding: 0 7px;
+    line-height: 30px;
+    /* position: relative; */
+    
+}
+#main-menu li a{
+    line-height: 30px;
+    color: #999;
+    font-size: 12px;
+    /* display: inline-block; */
+    
+}
+#main-menu a:hover{
+    color: #f10215;
+}
+#main-menu li:nth-child(2) a{
+    color: #f10215;
+}
+#main-menu .sep{
+    margin: 11px 5px 0 ;
+    color: #cccccc;
+}
+#xiala{
+    float: left;
+}
+#xiala:hover{
+    background: #fff;
+}
+#xiala:hover #xiala-menu{
+    display: block;
+}
+#xiala-menu{
+    /* display: block; */
+    height: 181px;
+    border: 0 1px 1px solid #e3e4e5;
+    padding: 15px 0;
+    background: #fff;
+    position: absolute;
+    margin-top: 30px;
+    margin-left: -1008px;
+    z-index: 3;
+    display: none;
+}
+
+/* nav结束 */
+
+/* header开始 */
+#header{
+    height: 140px;
+}
+#logo{
+    width: 190px;
+    height: 170px;
+    background: url("../img/sprite.head.png");
+    position: absolute;
+    overflow: hidden;
+    margin-top: -31px;
+    border-bottom: 1px solid #ededed transparent;
+    box-shadow: 0 -12px 10px rgba(0,0,0,.2);
+    clear: both;
+    z-index: 2;
+}
+#logo a{
+    display: block;
+    width: 100%;
+    height: 100%;
+
+}
+
+#center{
+    height: 60px;
+    position: relative;
+}
+#form{
+    width: 550px;
+    height: 35px;
+    /* margin-bottom: 0; */
+    background-color: #fff;
+    
+    /* border: 1px solid transparent; */
+    position: absolute;
+    left: 320px;
+    top: 25px;
+    
+}
+#form #search{
+    width: 450px;
+    height: 25px;
+    padding: 4px 44px 4px 4px;
+    border: 1px solid transparent;
+    position: relative;
+    float: left;
+}
+#form #search .input{
+    width: 450;
+    height: 100%;
+    line-height: 25px;
+    font-size: 14px;
+    outline: none;
+    border: 0;
+    /* position: relative; */
+    /* top: 50%; */
+}
+#camera{
+    /* float: left; */
+    border: 0;  
+    background-color: transparent;
+    outline: none;  
+    cursor:pointer;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 94%;
+    margin-top: -9px;
+    
+    /* margin-right: -4px; */
+
+}
+#search-icon{
+    /* display: block; */
+    float: left;
+    width: 50px;
+    height: 35px;
+    border: 0;  
+    background-color: transparent;
+    outline: none;  
+    cursor:pointer;
+    background-color: #f00;
+    font-size: 20px;
+    line-height: 35px;
+    position: absolute;
+    margin-right: 0;
+    margin-top: 0;
+    
+}
+
+
+
+
+
+
+
+
+/* header结束 */

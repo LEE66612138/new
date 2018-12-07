@@ -1,0 +1,173 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul, ol{
+            list-style: none;
+        }
+        img{
+            border: 0;
+        }
+
+        #container {
+            margin: 100px auto;
+            width: 613px;
+            height: 230px;
+            /* background: #f00; */
+            overflow: hidden;
+            position: relative;
+        }
+
+        #picture .selected{
+            display: block;
+        }
+        #picture li{
+            float: left;
+            display: none;
+        }
+        #picture img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        #menu{
+            position: absolute;
+            /* width: 104px; */
+            height: 20px;
+            margin-left: 500px;
+            margin-top: 200px;
+            /* margin-right: 5px; */
+        }
+        #menu li{
+            background: #fff;
+            border: 1px solid #cccccc;
+            width: 20px;
+            float: left;
+            margin: 0 2px;
+            line-height: 20px;
+            text-align: center;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+        #to-last, #to-next{
+            width: 50px;
+            height: 70px;
+            background: #ccc;
+            opacity: 0.5;
+            position: absolute;
+            line-height: 70px;
+            text-align: center;
+            top: 50%;
+            transform: translate(0, -50%);
+            cursor: pointer;
+        }
+        #to-next{
+            right: 0;
+        }
+        #menu .selected{
+            background: orange;
+            color: #fff;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul id="picture">
+            <li class="selected"><img src="img/1.jpg" alt=""></li>
+            <li><img src="img/2.jpg" alt=""></li>
+            <li><img src="img/3.jpg" alt=""></li>
+            <li><img src="img/4.jpg" alt=""></li>    
+        </ul>
+        <ul id="menu">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div id="last-next">
+            <div id="to-last" class="selected">&lt;</div>
+            <div id="to-next">&gt;</div>
+        </div>
+
+        <script>
+            var oPicture = document.getElementById('picture');
+            var aLi1 = oPicture.getElementsByTagName('li');
+            var oMenu = document.getElementById('menu');
+            var aLi2 = oMenu.getElementsByTagName('li');
+            var oToLast = document.getElementById('to-last');
+            var oToNext = document.getElementById('to-next');
+            var oContainer = document.getElementById('container');
+            var iNow = 0;
+            var timer;
+            // var aArrow = oArrows.getElementsByTagName('div');
+
+            oPicture.onselectstart = oMenu.onselectstart = oToLast.onselectstart = oToNext.onselectstart = function(){
+                return false;
+            };
+            
+            for(var i = 0; i < aLi2.length; i++){
+                aLi2[i].index = i;
+                aLi2[i].onmouseover = function(){
+                    iNow = this.index;
+                    changeImage();
+                };    
+            };
+            
+            oToLast.onclick = oToNext.onclick = function(){
+                
+                if(this == oToLast){
+                    iNow--;
+                    if(iNow == -1){
+                        iNow = aLi1.length - 1;
+                        }
+                }else{
+                    iNow++;
+                    if(iNow == aLi1.length){
+                        iNow = 0;
+                        }
+                }
+                console.log(iNow);
+                changeImage();
+                
+                
+                
+            };
+            play();
+            oContainer.onmouseover = function(){
+                clearInterval(timer);
+            };
+            oContainer.onmouseout = function(){
+                play();
+            }
+            function changeImage(){
+                for(var i = 0; i < aLi2.length; i++){
+                        aLi1[i].className = 'none';
+                        aLi2[i].className = 'none';
+                    }
+                    aLi1[iNow].className = 'selected';
+                    aLi2[iNow].className = 'selected';
+            }
+            function play(){
+                timer = setInterval(function(){
+                oToNext.onclick();
+                }, 1000);
+            }
+
+            
+        
+            
+        </script>
+        
+
+    </div>
+</body>
+</html>

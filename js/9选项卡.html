@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul, ol{
+            list-style: none;
+        }
+        #container{
+            margin-top: 70px;
+            margin-left: 300px;
+            width: 400px;
+            height: 300px;
+            background: #ff0000;
+            position: relative;
+        }
+        #menu{
+            height: 50px;
+        }
+        #menu li{
+            float: left;
+            width: 130px;
+            line-height: 50px;
+            text-align: center;
+            background: #00ff00;
+            margin-right: 3px;
+        }
+        #menu li:hover{
+            cursor: pointer;
+        }
+        
+        #content-html, #content-css, #content-js{
+            height: 250px;
+            width: 100%;
+            /* position: absolute; */
+        }
+        #content-css, #content-js, #content-html{
+            display: none;
+        }
+        #choice .content{
+            display: block;
+            }
+        #menu .content{
+            background: #0000ff;
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="container">
+        <ul id="menu">
+            <li class="content">html</li>
+            <li>css</li>
+            <li>js</li>
+        </ul>
+        <!-- <div id="content-face" class="content">请点击</div> -->
+        <div id="choice">
+            <div id="content-html" class="content">这是html</div>
+            <div id="content-css">这是css</div>
+            <div id="content-js">这是js</div>
+        </div>
+        
+    </div>
+
+
+    <script>
+        var oMenu = document.getElementById('menu');
+        var aLi = oMenu.getElementsByTagName('li');
+        var oChoice = document.getElementById('choice');
+        var aDiv = oChoice.getElementsByTagName('div');
+        // var oContentHtml = document.getElementById('content-html');
+        // var oContentCss = document.getElementById('content-css');
+        // var oContentJs = document.getElementById('content-js');
+        // var oContentFace = document.getElementById('content-face');
+        
+        for(var i = 0; i < aLi.length; i++){
+            aLi[i].index = i;
+            aLi[i].onclick = function(){
+                for(var i = 0; i < aLi.length; i++){
+                    aLi[i].className = '';
+                    aDiv[i].className = '';
+                }
+                this.className = 'content';
+                aDiv[this.index].className = 'content';
+                
+            };
+        }
+
+        // aLi[0].onclick = function(){
+        //     aLi[0].style.background = '#00f';
+        //     aLi[1].style.background = '#0f0';
+        //     aLi[2].style.background = '#0f0';
+        //     oContentHtml.style.display = 'block';
+        //     oContentCss.style.display = 'none';
+        //     oContentJs.style.display = 'none';
+        //     oContentFace.style.display = 'none';
+
+        // }
+        // aLi[1].onclick = function(){
+        //     aLi[0].style.background = '#0f0';
+        //     aLi[1].style.background = '#00f';
+        //     aLi[2].style.background = '#0f0';
+        //     oContentHtml.style.display = 'none';
+        //     oContentCss.style.display = 'block';
+        //     oContentJs.style.display = 'none';
+        //     oContentFace.style.display = 'none';
+        // }
+        // aLi[2].onclick = function(){
+        //     aLi[0].style.background = '#0f0';
+        //     aLi[1].style.background = '#0f0';
+        //     aLi[2].style.background = '#00f';
+        //     oContentHtml.style.display = 'none';
+        //     oContentCss.style.display = 'none';
+        //     oContentJs.style.display = 'block';
+        //     oContentFace.style.display = 'none';
+        // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <label for="username">用户名</label>
+    <input type="text" id="username">
+    <a href="8右键菜单.html">hello</a>
+
+    <script>
+        var num = 0;
+        var res = setInterval((function(){
+        console.log(num++);
+        if(num == 5){
+            clearInterval(res);
+        }
+    }), 1000)
+
+        setTimeout(function(){
+            console.log(num++);
+        }, 1000)
+    </script>
+    
+</body>
+</html>
