@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        h3{
+            background: #000000;
+            color: #ffffff;
+        }
+        #container{
+            width: 200px;
+            border: 1px solid;
+            /* height: 300px; */
+        }
+        #container ul{
+            display: none;
+        }
+        #container .selected{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul id="container">
+        <li>
+            <h3 id="top1">管理区</h3>
+            <ul id="ul1">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </li>
+        <li>
+            <h3 id="top2">折叠区</h3>
+            <ul id="ul2">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        var oTop1 = document.getElementById('top1');
+        var oTop2 = document.getElementById('top2');
+        var oUl1 = document.getElementById('ul1');
+        var oUl2 = document.getElementById('ul2');
+        
+
+        clk(oTop1);
+        clk(oTop2);
+
+        function clk(elem){
+            var i = 0;
+            elem.onclick = function(){
+                if(i == 1){
+                    elem.nextElementSibling.style.display = 'none';
+                    i--;
+                    return i;
+            }
+            elem.nextElementSibling.style.display = 'block';
+                i++;
+                return i;
+            }
+            
+        };
+
+    </script>
+</body>
+</html>
