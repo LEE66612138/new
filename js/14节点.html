@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>节点</title>
+</head>
+<body>
+    <div id="div1">
+        <div class="div01"></div>
+        <div class="div01"></div>
+        <div class="div01"></div>
+    </div>
+
+
+    <script>
+        var oDiv1 = document.getElementById('div1');
+
+
+        
+        var allDiv1 = byClassname('div01', oDiv1);
+        console.log(allDiv1);
+        var allDiv = oDiv1.getElementsByClassName('div01');
+        console.log(allDiv);
+
+        function byClassname(clsname, context){
+            context = context || document;
+            if(context.getElementsByClassName){
+                return context.getElementsByClassName(clsname);
+            }
+            var allTag = document.getElementsByTagName('*');
+            var result = [];
+            for(var i = 0; i < allTag.length; i++){
+                if(allTag[i].className.indexOf(clsname) != -1){
+                    result.push(allTag[i]);
+                }
+            }
+            return result;
+        }
+
+    </script>
+</body>
+</html>
