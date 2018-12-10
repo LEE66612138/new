@@ -1,0 +1,110 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>放大镜</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #little {
+            width: 400px;
+            height: 400px;
+            float: left;
+            margin-right: 5px;
+            position: relative;
+        }
+
+        #big {
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            float: left;
+            display: none;
+            position: relative;
+        }
+
+        #drag {
+            width: 200px;
+            height: 200px;
+            cursor: move;
+            position: absolute;
+            background: #cccccc;
+            opacity: 0.5;
+            filter: alpha(opacity=50);
+            left: 0;
+            top: 0;
+            display: none;
+        }
+
+        #little .see {
+            display: block;
+        }
+
+        #big.see {
+            display: block;
+        }
+        #picture{
+            position: absolute;
+            left: 20px;
+            top: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="little">
+        <img src="img/little.jpg" alt="">
+        <div id="drag"></div>
+    </div>
+    <div id="big">
+        <img id="picture" src="img/big.jpg" alt="">
+    </div>
+
+    <script>
+        var oLittle = document.getElementById('little');
+        var oDrag = document.getElementById('drag');
+        var oBig = document.getElementById('big');
+        var oPicture = document.getElementById('picture');
+
+        oLittle.onmouseover = function (e) {
+            e = e || window.event;
+            oDrag.className = 'see';
+            oBig.className = 'see';
+        };
+        oLittle.onmousemove = function (e) {
+            e = e || window.event;
+            var left = e.clientX - oDrag.offsetWidth * 0.5;
+            var top = e.clientY - oDrag.offsetHeight * 0.5;
+            if(left < 0){
+                left = 0;
+            }
+            if(top < 0){
+                top = 0;
+            }
+            if(left > oLittle.offsetWidth - oDrag.offsetWidth){
+                left = oLittle.offsetWidth - oDrag.offsetWidth;
+            }
+            if(top > oLittle.offsetHeight - oDrag.offsetHeight){
+                top = oLittle.offsetHeight - oDrag.offsetHeight;
+            }
+            oDrag.style.left = left + 'px';
+            oDrag.style.top = top + 'px';
+            oPicture.style.left = -oPicture.offsetWidth * left / oLittle.offsetWidth + 'px';
+            oPicture.style.top = -oPicture.offsetHeight * top / oLittle.offsetHeight + 'px';
+            
+        };
+
+
+        oLittle.onmouseout = function () {
+            oDrag.className = '';
+            oBig.className = '';
+        }
+    </script>
+</body>
+
+</html>
