@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="ipt" value="">
+    <ul>
+        <li>iphone6</li>
+        <li>iphone7</li>
+        <li>huawei</li>
+        <li>xiaomi</li>
+    </ul>
+    <script src="jquery-3.3.1.js"></script>
+
+    <script>
+        $(function () {
+            $('#ipt').on('keyup', function () {
+                $('ul li').css('background', 'transparent');
+                if (this.value != '') {
+                    $('ul li:contains(' + this.value + ')').css('background', 'red');
+                }
+
+            });
+
+
+
+
+        });
+    </script>
+</body>
+
+</html>
