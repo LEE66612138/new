@@ -1,0 +1,172 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        img {
+            border: 0;
+        }
+
+        #container {
+            margin: 100px auto;
+            width: 613px;
+            height: 230px;
+            /* background: #f00; */
+            overflow: hidden;
+            position: relative;
+        }
+
+        #picture .selected {
+            display: block;
+        }
+
+        #picture li {
+            float: left;
+            display: none;
+        }
+
+        #picture img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        #menu {
+            position: absolute;
+            /* width: 104px; */
+            height: 20px;
+            margin-left: 500px;
+            margin-top: 200px;
+            /* margin-right: 5px; */
+        }
+
+        #menu li {
+            background: #fff;
+            border: 1px solid #cccccc;
+            width: 20px;
+            float: left;
+            margin: 0 2px;
+            line-height: 20px;
+            text-align: center;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        #to-last,
+        #to-next {
+            width: 50px;
+            height: 70px;
+            background: #ccc;
+            opacity: 0.5;
+            position: absolute;
+            line-height: 70px;
+            text-align: center;
+            top: 50%;
+            transform: translate(0, -50%);
+            cursor: pointer;
+        }
+
+        #to-next {
+            right: 0;
+        }
+
+        #menu .selected {
+            background: orange;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <ul id="picture">
+            <li class="selected"><img src="img/1.jpg" alt=""></li>
+            <li><img src="img/2.jpg" alt=""></li>
+            <li><img src="img/3.jpg" alt=""></li>
+            <li><img src="img/4.jpg" alt=""></li>
+        </ul>
+        <ul id="menu">
+            <li class="selected">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div id="arrows">
+            <div id="to-last" class="selected">&lt;</div>
+            <div id="to-next">&gt;</div>
+        </div>
+
+        <script src="jquery-3.3.1.js"></script>
+
+        <script>
+            $(function () {
+                $menu = $('#menu li');
+                $picture = $('#picture li');
+                $arrows = $('#arrows');
+                var nowIndex = 0;
+                var timer;
+
+
+                $menu.on('mouseover', function () {
+                    nowIndex = $(this).index();
+                    changeImg();
+                });
+
+                $arrows.on('click', 'div', function () {
+                    if (this.id == 'to-last') {
+                        nowIndex--;
+                        if (nowIndex == -1) {
+                            nowIndex = $menu.length - 1;
+                        }
+                    } else {
+                        nowIndex++;
+                        if (nowIndex == $menu.length) {
+                            nowIndex = 0;
+                        }
+                    }
+                    changeImg();
+                });
+                $('#container').hover(function () {
+                    clearInterval(timer);
+                }, function () {
+                    play();
+                });
+
+                play();
+
+                function play() {
+                    timer = setInterval(function () {
+                        $('#to-next').trigger('click');
+                    }, 1000);
+                }
+
+                function changeImg() {
+                    $menu.eq(nowIndex).add($picture.eq(nowIndex)).addClass('selected').siblings().removeClass('selected');
+                }
+
+
+
+
+            });
+
+
+        </script>
+
+
+    </div>
+</body>
+
+</html>
