@@ -1,0 +1,100 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选项卡</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        #container {
+            margin-top: 70px;
+            margin-left: 300px;
+            width: 400px;
+            height: 300px;
+            background: #ff0000;
+            position: relative;
+        }
+
+        #menu {
+            height: 50px;
+        }
+
+        #menu li {
+            float: left;
+            width: 130px;
+            line-height: 50px;
+            text-align: center;
+            background: #00ff00;
+            margin-right: 3px;
+        }
+
+        #menu li:hover {
+            cursor: pointer;
+        }
+
+        #content-html,
+        #content-css,
+        #content-js {
+            height: 250px;
+            width: 100%;
+            /* position: absolute; */
+        }
+
+        #content-css,
+        #content-js,
+        #content-html {
+            display: none;
+        }
+
+        #choice .selected {
+            display: block;
+        }
+
+        #menu .selected {
+            background: #0000ff;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+        <ul id="menu">
+            <li class="selected">html</li>
+            <li>css</li>
+            <li>js</li>
+        </ul>
+        <!-- <div id="content-face" class="content">请点击</div> -->
+        <div id="choice">
+            <div id="content-html" class="selected">这是html</div>
+            <div id="content-css">这是css</div>
+            <div id="content-js">这是js</div>
+        </div>
+
+    </div>
+
+
+    <script src="jquery-3.3.1.js"></script>
+
+    <script>
+        $(function () {
+            $('#menu li').on('click', function () {
+                $(this).add($('#choice div').eq($(this).index())).addClass('selected').siblings().removeClass('selected');
+                // $('#choice div').eq($(this).index()).addClass('selected').siblings().removeClass('selected');
+            });
+
+        });
+    </script>
+</body>
+
+</html>
