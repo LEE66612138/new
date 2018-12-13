@@ -1,0 +1,111 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            width: 300px
+        }
+
+        li {
+            list-style: none;
+            float: left;
+            width: 100px;
+        }
+
+        #first,
+        #second,
+        #third {
+            float: left;
+            width: 300px;
+            background: #ccc;
+        }
+
+        #container {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <ul>
+            <li>name</li>
+            <li>age</li>
+            <li>school</li>
+        </ul>
+        <div>
+            <div>
+                <div id="first">first</div>
+                <div>
+                    <ul>
+                        <li>zhangsan</li>
+                        <li>18</li>
+                        <li>nongda</li>
+                    </ul>
+                    <ul>
+                        <li>lisi</li>
+                        <li>19</li>
+                        <li>nongda</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div>
+                <div id="second">second</div>
+                <div>
+                    <ul>
+                        <li>zhangsan</li>
+                        <li>18</li>
+                        <li>nongda</li>
+                    </ul>
+                    <ul>
+                        <li>lisi</li>
+                        <li>19</li>
+                        <li>nongda</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div>
+                <div>
+                    <div id="third">third</div>
+                    <div>
+                        <ul>
+                            <li>zhangsan</li>
+                            <li>18</li>
+                            <li>nongda</li>
+                        </ul>
+                        <ul>
+                            <li>lisi</li>
+                            <li>19</li>
+                            <li>nongda</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <script src="jquery-3.3.1.js"></script>
+            <script>
+                $(function () {
+                    $('#first, #second, #third').on('click', function () {
+                        $(this).siblings().toggle();
+                    });
+                });
+
+            </script>
+</body>
+
+</html>
