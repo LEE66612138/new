@@ -1,0 +1,111 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+
+        li{
+            list-style: none;
+            float: left;
+            width: 100px;
+            height: 25px;
+        }
+        #form{
+            width: 300px;
+        }
+        #header li{
+            font-size: 20px;
+            border-bottom: 1px solid #000000;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="container">
+        <div>
+            筛选:
+            <input type="text" id="print">
+        </div>
+
+        <div id="form">
+            <ul id="header">
+                <li>姓名</li>
+                <li>性别</li>
+                <li>学号</li>
+            </ul>
+            <div id="information">
+                <ul>
+                    <li>张三</li>
+                    <li>男</li>
+                    <li>123456</li>
+                </ul>
+                <ul>
+                    <li>李四</li>
+                    <li>女</li>
+                    <li>145684</li>
+                </ul>
+                <ul>
+                    <li>rain</li>
+                    <li>女</li>
+                    <li>258964</li>
+                </ul>
+                <ul>
+                    <li>王五</li>
+                    <li>女</li>
+                    <li>789516</li>
+                </ul>
+                <ul>
+                    <li>赵柳</li>
+                    <li>男</li>
+                    <li>512348</li>
+                </ul>
+                <ul>
+                    <li>刘琦</li>
+                    <li>男</li>
+                    <li>665236</li>
+                </ul>
+                <ul>
+                    <li>lucy</li>
+                    <li>女</li>
+                    <li>848463</li>
+                </ul>
+                <ul>
+                    <li>jack</li>
+                    <li>男</li>
+                    <li>745213</li>
+                </ul>
+                <ul>
+                    <li>lili</li>
+                    <li>女</li>
+                    <li>253849</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            $('#print').on('keyup', function () {
+                $('#information ul').css('display','none');
+                $('#information ul li:contains('+ $(this).val() +')').parent().css('display','block');
+                // console.log($('#information ul li:contains('+ $(this).val() +')').parent())
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>
