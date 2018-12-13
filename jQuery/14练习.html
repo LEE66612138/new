@@ -1,0 +1,82 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+            height: 50px;
+        }
+
+        #div1,
+        #div2,
+        #div3 {
+            margin-left: 10px;
+            text-align: center;
+            line-height: 50px;
+            float: left;
+        }
+
+        #menu1,
+        #menu2,
+        #menu3 {
+            background: #ccc;
+            width: 200px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        #menu1son,
+        #menu2son,
+        #menu3son {
+            display: none;
+            background: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <div id="menu1">menu1</div>
+        <ul id="menu1son">
+            <li>menu1son1</li>
+            <li>menu1son2</li>
+        </ul>
+    </div>
+    <div id="div2">
+        <div id="menu2">menu1</div>
+        <ul id="menu2son">
+            <li>menu2son1</li>
+            <li>menu2son2</li>
+        </ul>
+    </div>
+    <div id="div3">
+        <div id="menu3">menu1</div>
+        <ul id="menu3son">
+            <li>menu3son1</li>
+            <li>menu3son2</li>
+        </ul>
+    </div>
+
+
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+
+        $('#menu1, #menu2, #menu3').hover(function () {
+            $(this).next().stop().slideDown();
+        }, function () {
+            $(this).next().stop().slideUp();
+        });
+    </script>
+
+</body>
+
+</html>
