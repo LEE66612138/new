@@ -1,0 +1,87 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table{
+            width: 600px;
+        }
+        tbody {
+            border: 1px solid;
+        }
+        tbody tr:nth-child(odd) {
+            background-color: #ccc;
+        }
+        tbody tr.selected{
+            background-color: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <thead>
+            <td></td>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>学校</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="choice" value=""></td>
+                <td>张三</td>
+                <td>18</td>
+                <td>农大</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="choice" value=""></td>
+                <td>李四</td>
+                <td>15</td>
+                <td>农大</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="choice" value=""></td>
+                <td>王五</td>
+                <td>20</td>
+                <td>农大</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="choice" value=""></td>
+                <td>赵柳</td>
+                <td>19</td>
+                <td>农大</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="choice" value=""></td>
+                <td>孙琦</td>
+                <td>13</td>
+                <td>农大</td>
+            </tr>
+        </tbody>
+
+        <script src="jquery-3.3.1.js"></script>
+        <script>
+            $(function () {
+                $('tbody tr').on('click', function () {
+                    // if($(this).hasClass('selected')){
+                    //     $(this).removeClass('selected').find(':checkbox').prop('checked',false);
+                    // }else{
+                    //     $(this).addClass('selected').find(':checkbox').prop('checked',true);
+                    // }
+                    $(this).toggleClass('selected').find(':checkbox').prop('checked', $(this).hasClass('selected'));
+                });
+
+
+            });
+
+
+        </script>
+
+    </table>
+</body>
+
+</html>
