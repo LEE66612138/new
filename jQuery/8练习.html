@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button id="big">放大</button>
+        <button id="small">缩小</button>
+    </div>
+    <div>
+        <button id="up">向上</button>
+        <button id="down">向下</button>
+    </div>
+
+    <textarea name="" cols="30" rows="10" id="text">
+        lsadkfjsaklfjasklfjksdfklsajfklasjdfkljsdklfjas
+        kldfjsakdlfjsklajfksldjfklasjfklsajdfkljasdfklja
+        sdfasfsdfasdfasdfadsgaglahfuiaelgiabhfuiashfiuals
+        bsdfilbasldifbaslidfbasskdfjsajfioasjfioasjdfios
+        adjfiosjiofjsiosdfas;fadsiofasofasonfasnfasnfoasn
+    </textarea>
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            var $big = $('#big');
+            var $small = $('#small');
+            var $text = $('#text');
+            var $up = $('#up');
+            var $down = $('#down');
+            $big.on('click', function () {
+                if (!$text.is(':animated')) {
+                    if ($text.height() <= 500) {
+                        $text.animate({
+                            height: '+=50'
+                        }, 300);
+                    }
+
+                }
+            });
+            $small.on('click', function () {
+                if (!$text.is(':animated')) {
+                    if ($text.height() >= 50) {
+                        $text.animate({
+                            height: '-=50'
+                        }, 300);
+                    }
+
+                }
+            });
+            $up.on('click', function () {
+                if (!$text.is(':animated')) {
+                    $text.animate({
+                        scrollTop: '-=50'
+                    }, 300);
+                }
+            });
+            $down.on('click', function () {
+                if (!$text.is(':animated')) {
+                    $text.animate({
+                        scrollTop: '+=50'
+                    }, 300);
+                }
+            });
+        });
+
+    </script>
+
+
+
+
+</body>
+
+</html>
