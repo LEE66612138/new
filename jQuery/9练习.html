@@ -1,0 +1,68 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        select {
+            width: 200px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <select name="" id="left" multiple="multiple">
+        <option value="">选项1</option>
+        <option value="">选项2</option>
+        <option value="">选项3</option>
+        <option value="">选项4</option>
+    </select>
+    <select name="" id="right" multiple="multiple">
+        <option value="">选项5</option>
+        <option value="">选项6</option>
+        <option value="">选项7</option>
+        <option value="">选项8</option>
+    </select>
+    <div>
+        <button id="left-right">选中到右</button>
+        <button id="right-left">选中到左</button>
+    </div>
+    <div>
+        <button id="allright">全选到右</button>
+        <button id="allleft">全选到左</button>
+    </div>
+
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $left = $('#left');
+        $right = $('#right');
+        $(function () {
+            $("#left-right").on('click', function () {
+                $('#left option:selected').appendTo($right);
+            });
+            $("#right-left").on('click', function () {
+                $('#right option:selected').appendTo($left);
+            });
+            $("#allright").on('click', function () {
+                $('#left option').appendTo($right);
+            });
+            $("#allleft").on('click', function () {
+                $('#right option').appendTo($left);
+            });
+            $left.on('dblclick', 'option', function () {
+                $('#left option:selected').appendTo($right);
+            });
+            $right.on('dblclick', 'option', function () {
+                $('#right option:selected').appendTo($left);
+            });
+        });
+
+
+
+    </script>
+</body>
+
+</html>
