@@ -1,0 +1,63 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .selected{
+            background: #ff0000;
+        }
+    
+    
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>个人基本信息</legend>
+            <div>
+                <label for="username">名称：</label>
+                <input type="text" id="username" value="名称">
+            </div>
+            <div>
+                <label for="key">密码：</label>
+                <input type="password" id="key" value="12">
+            </div>
+            <div>
+                <label for="information">详细信息：</label>
+                <textarea name="" id="information" cols="30" rows="10">详细信息</textarea>
+            </div>
+        </fieldset>
+    </form>
+
+
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            $input = $(':input');
+            $input.on('focus', function () {
+                $(this).addClass('selected').val(this.value == this.defaultValue ? '' : this.value);
+
+
+            });
+            $input.on('blur', function () {
+                $(this).removeClass('selected').val(this.value ? this.value : this.defaultValue);
+            })
+
+
+
+
+
+
+
+        });
+
+
+
+    </script>
+</body>
+
+</html>
