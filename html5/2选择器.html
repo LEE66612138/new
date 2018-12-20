@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <div id="div01" class="aa bb cc ff"></div>
+        <div class="aa"></div>
+    </div>
+    <div>
+        <div class="aa"></div>
+    </div>
+
+    <script>
+        var oDiv1 = document.getElementsByClassName('.aa');
+        var oDiv2 = document.querySelectorAll('.aa');
+        let oDiv01 = document.getElementById('div01')
+        console.log(oDiv1);
+        console.log(oDiv2);
+        console.log(oDiv01.classList);
+        console.log(oDiv01.classList.length);
+        oDiv01.classList.add('dd');
+        console.log(oDiv01.classList);
+        oDiv01.classList.remove('aa');
+        console.log(oDiv01.classList);
+        oDiv01.classList.toggle('ff');
+        console.log(oDiv01.classList);
+
+
+    </script>
+</body>
+</html>
