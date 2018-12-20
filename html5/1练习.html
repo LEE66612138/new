@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <style>
+        header{
+            background: #ff0;
+        }
+        textarea{
+            resize: none;
+        }
+    
+    </style>
+</head>
+
+<body>
+    <input type="text" list="menu">
+    <datalist id="menu">
+        <option>123</option>
+        <option>234</option>
+        <option>845</option>
+        <option>852</option>
+    </datalist>
+    <header>
+        hahahahaha
+    </header>
+    <form action="">
+        <p>
+            <label>用户名<input type="text" name="username" autocomplete="on" autofocus> </label>
+        </p>
+        <p>
+            <label for="key">密码</label>
+            <input type="password" id="key">
+        </p>
+        <p>
+            性别
+            <input type="radio" name="sex">男
+            <input type="radio" name="sex">女
+        </p>
+        <p>
+            爱好
+            <input type="checkbox" name="hobby">足球
+            <input type="checkbox" name="hobby">篮球
+            <input type="checkbox" name="hobby">羽毛球
+            <input type="checkbox" name="hobby">排球
+        </p>
+        <p>
+            自我介绍
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </p>
+
+        <p>
+            邮箱
+            <input type="email">
+        </p>
+        <p>
+            日期
+            <input type="date">
+        </p>
+        <p>
+            具体时间
+            <input type="time" name="" id="">
+        </p>
+        <p>
+            url
+            <input type="url">
+        </p>
+        <p>
+            数字
+            <input type="number">
+        </p>
+        <p>
+            滑杆
+            <input type="range" max="10" min="1" step="1">
+        </p>
+        <p>
+            搜索
+            <input type="search">
+        </p>
+        <p>
+            颜色
+            <input type="color">
+        </p>
+        <input type="submit" value="提交">
+        <input type="reset" value="重置">
+
+    </form>
+</body>
+
+</html>
