@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">随机数</button>
+    <h1 id="h1"></h1>
+
+    <script>
+        let oBtn = document.querySelector('#btn');
+        let oH1 = document.querySelector('#h1');
+        var obj1 = {};
+
+
+
+        oBtn.onclick = function () {
+            let arr = [];
+            for (let i = 0; i < 5; i++) {
+                arr.push(Math.ceil(Math.random() * 10));
+            }
+            oH1.innerHTML = arr;
+            location.hash = Math.random();
+
+            console.log(location.hash)
+            obj1[location.hash] = arr;
+        };
+        window.onhashchange = function(){
+            oH1.innerHTML = obj1[location.hash];
+        };
+
+    </script>
+</body>
+
+</html>
